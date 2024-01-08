@@ -13,12 +13,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			isLogged: false
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+				getActions().changeColor(0, 'green');
+			},
+
+			settingLogIn: () => {
+				setStore({isLogged: true})
+			},
+
+			logOut: () => {
+				setStore({isLogged: false})
 			},
 
 			getMessage: async () => {
